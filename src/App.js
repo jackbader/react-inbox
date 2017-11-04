@@ -4,7 +4,6 @@ import './App.css';
 
 import Toolbar from './components/Toolbar';
 import Messages from './components/Messages'
-import ComposeMessage from './components/ComposeMessage'
 
 class App extends Component {
 
@@ -80,6 +79,11 @@ class App extends Component {
           message.selected !== selected ? { ...message, selected } : message
         ))
       })
+    }
+
+    deleteMessages = () => {
+      const messages = this.state.messages.filter(message => !message.selected)
+      this.setState({ messages })
     }
 
 
