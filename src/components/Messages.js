@@ -2,10 +2,10 @@ import React from 'react'
 
 import Message from '../components/Message'
 
-const Messages = ({messages, selectedMessage}) => {
+const Messages = ({messages, selectedMessage, starredMessage}) => {
   return (
     <div>
-      { messages.map((message, i) => <Message key={ i } message={ message } selectedMessage={ selectedMessage } />) }
+      { messages.slice(0).reverse().map((message, i) => <Message key={ i }  message={ message } selectedMessage={ selectedMessage } starredMessage={ starredMessage } />) }
     </div>
   )
 }
